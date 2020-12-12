@@ -1,0 +1,15 @@
+[package]
+name = 'openwrt-exporter'
+version = '0.1.0'
+authors = ['Bruno Tavares <connect+github@bltavares.com>']
+edition = '2018'
+
+[dependencies]
+tiny_http = '0.7.0'
+
+[dependencies.serde]
+version = '1.0.118'
+features = ['derive']
+
+[dependencies.ubus-serde]
+git = 'https://github.com/bltavares/ubus-rs'
