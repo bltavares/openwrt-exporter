@@ -26,4 +26,8 @@ Current release size stripped: ~1.2M
 cross build --target mips-unknown-linux-musl --release
 docker run --rm -v ${PWD}/target/mips-unknown-linux-musl/release:/target bltavares/rust-cross-mips-openwrt mips-linux-muslsf-strip /target/openwrt-exporter
 scp target/mips-unknown-linux-musl/release/openwrt-exporter root@router.ip:~/openwrt-exporter
+
+scp rc/openwrt-exporter root@router.ip:/etc/rc.d/openwrt-exporter
+ssh root@router.ip chmod +x /root/openwrt-exporter /etc/rc.d/openwrt-exporter
+ssh root@router.ip /etc/rc.d/openwrt-exporter start
 ```
